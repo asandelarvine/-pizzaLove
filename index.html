@@ -1,0 +1,171 @@
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Pizza</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body style="background-image:url(./assets/pizza1.jpeg); background-size:cover ;" >
+    <div class="heading">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+    
+            <a class="navbar-brand" href="#">pizzaLove@425°C</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</div>
+<div class="p">
+    <h1>Pizza for Everyone</h1>
+    <p>
+        Food brings people together and there is no sweet love sharing an amazing meal.Pizza brings out <br>
+        it's rich greatness of joy filling the hearts of the people.
+    </p>
+    <br>
+    <br>
+    <p>
+        At pizzaLove@425°C we fully at your service. <br>
+        We not only make this amazing meal but bring it to your doorstep. <br>
+        Just a phone call away.
+    </p>
+    
+
+
+</div>
+    <div class="container"   >
+        <div class="p-3">
+            <button type="button" class="btn" id="shoppingCartBtn">
+                <span style="color: chartreuse;">Shopping Cart</span>
+                <span class="badge bg-secondary" id="cartItems">0</span>
+            </button>
+            <span class="badge bg-warning text-dark subTotal">0</span>
+            <button disabled class="btn btn-primary btn-sm checkoutBtn">Checkout</button>
+        </div>
+
+        <!-- beginning of the shoppingcart -->
+        <div id="shoppingCart" class="shadow rounded border border-light bg-white">
+            <h3 class="p-3">Shopping Cart</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cartItem">
+                    <div class="row">
+                       
+                        <div class="col-4">
+                            <span class="name">0</span>
+                            <div class="details"></div>
+                        </div>
+                        <div class="col-6">
+                            <span class="price">0</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="p-3 d-flex justify-content-between">
+                <div>Sub Total</div>
+                <div class="subTotal ml-auto">0</div>
+            </div>
+
+            <div class="p-3">
+                <h4>Checkout Details</h4>
+                <h5>Delivery Details</h5>
+                <Select class="form-control" id="deliveryZones">
+                    <option value="">Pick up</option>
+                </Select>
+            </div>
+
+            <div class="p-3 d-flex justify-content-between">
+                <strong>Total Price</strong>
+                <strong id="totalPrice">Total Price</strong>
+                <div>
+                    <button disabled type="button" class="btn btn-sm btn-primary checkoutBtn">Checkout</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- end of the shoppingcart -->
+
+        <div id="pizzalisting" class="row">
+            list of pizza
+        </div>
+
+
+        <!-- beginning of the offcanvas -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="pizzaCustomazation" aria-labelledby="pizzaNameDiv"  style="background-image: url(./images/bkg.jpeg); background-size: cover;">
+            <div class="offcanvas-header"  >
+                <h1 class="offcanvas-title" id="pizzaNameDiv" style="color: chartreuse;" >Your Order</h1>
+                
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body small">
+                
+
+    
+
+                <div class="form-group mb-3"  style="color: white;">
+                    <label for="size">Size</label>
+                    <select name="size" id="size" class="form-control" id="">
+                        <option value="">Select Size</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3" style="color: white;" >
+                    <label for="crust">Crust</label>
+                    <select name="crust" id="crust" class="form-control" id="">
+                        <option value="">Select Crust</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3" style="color: white;">
+                    <label for="toppings">Toppings</label>
+                    <select name="toppings" id="toppings" class="form-control" id="">
+                        <option value="">Select Toppings</option>
+                    </select>
+                    <!-- <div id="toppings"> -->
+
+                </div>
+            
+
+                <div class="form-group d-flex justify-content-between">
+                    <h4 id="pizzaPrice"></h4>
+                    <div>
+                        <button disabled class="btn btn-warning" id="addToCartBtn" data-bs-toggle="offcanvas"
+                            data-bs-target="#pizzaCustomazation" aria-controls="offcanvasBottom">Add to cart</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- end of the offcanvas -->
+
+    </div>
+    <footer class="footer">
+        copyrite@2021 pizzaLove@425°C
+    </footer>
+
+    <script src="./main.js"></script>
+
+</body>
+
+</html>
