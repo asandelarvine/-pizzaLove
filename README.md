@@ -15,7 +15,7 @@ It also allows one to make a delivery order to their destination.
 
 ### CHECK OUT THE WEBSITE:
 
-[]
+[https://asandelarvine.github.io/-pizzaLove/]
 
 
 
@@ -23,7 +23,7 @@ It also allows one to make a delivery order to their destination.
 
 #### Open Terminal
 
-#### git clone 
+#### git clone https://asandelarvine.github.io/-pizzaLove/
 
 #### cd pizzaLove
 
