@@ -53,14 +53,15 @@ let cart = new Cart();
 let selectedPizza;
 let cartItemHtml;
 const pizzaListing = [
-    new pizzaTypes("Hawaiian Pizza", "delivery.png", "Add in some pineapple ham and it creates an unexpectedly solid sweet and salty combination for this type of pizza."),
+    new pizzaTypes("Hawaiian Pizza", "hawaaian.webq", "Add in some pineapple ham and it creates an unexpectedly solid sweet and salty combination for this type of pizza."),
     new pizzaTypes("veggie Pizza","veggy.webq","When you want to jazz up your cheese pizza with color and texture, veggies are the perfect topping. " ),
-    new pizzaTypes("Pepperoni Pizza", "./imagespepp.wbeq", "Who doesn’t love biting into a crispy, salty round of pepperoni?"),
-    new pizzaTypes("BBQ Chicken Pizza", "pizza-recipe-1-500x375.jpg", " The chicken slathered over the top of a pie gives it a tangy, sweet flavor that can’t be beaten."),
+    new pizzaTypes("Pepperoni Pizza", "", "Who doesn’t love biting into a crispy, salty round of pepperoni?"),
+    new pizzaTypes("BBQ Chicken Pizza", "", " The chicken slathered over the top of a pie gives it a tangy, sweet flavor that can’t be beaten."),
     new pizzaTypes("Meat Pizza","","If pepperoni just isn’t enough, and you’re looking for a pie with a bit more heft, a meat pizza is a perfect and popular choice. Pile on ground beef and sausage for a hearty meal."),
     new pizzaTypes("Margherita Pizza",""," There’s a reason it’s an Italian staple it's richness in basil, fresh mozzarella, and tomatoes"),
     new pizzaTypes("Buffalo Pizza", "", "All its spicy, salty, buttery goodness is a natural pairing for pizza.Branch out with some buffalo sauce on your pie"),
-    new pizzaTypes("Cheese Pizza","", "It should be no shocker that a classic is the statistical favorite.How cheesy do u love it")
+    new pizzaTypes("Cheese Pizza","", "It should be no shocker that a classic is the statistical favorite.How cheesy do u love it"),
+    new pizzaTypes("Supreme Pizza", "", "When you can’t decide which toppings to get, it’s time for the supreme pizza. The “supreme” refers to the litany of toppings that come scattered on these pies, from sausage to vegetables to pepperoni. And it’s the combination of the flavors that really makes it sing.")
 ];
 
 const crustList = [
@@ -84,8 +85,9 @@ const topingsList = [
 
 const zones = [
     new zone("Zone A", 100),
-    new zone("Zone B", 200),
-    new zone("Zone C", 300)
+    new zone("Zone B", 150),
+    new zone("Zone C", 250),
+    new zone("zone D", 350)
 ]
 
 function populateDropdowns(sizeElement, items, valueFiled, textField, extraField){
@@ -241,7 +243,7 @@ $(document).ready(function () {
         }
         updateUI()
     });
-    /* end of Populate sizes */
+    
 
     /* Populate crust */
     populateDropdowns($('select#crust'), crustList, 'name', 'name', 'price');
@@ -254,16 +256,16 @@ $(document).ready(function () {
         selectedPizza.crust = crust;
         updateUI();
     });
-    /* end of Populate sizes */
+    
 
-    /* Populate delivery zones */
+    /*  delivery zones */
     populateDropdowns($('select#deliveryZones'), zones, 'zoneName', 'zoneName', 'price');
     $('select#deliveryZones').on("change", function(){
         cart.delivery = zones.find(z=>z.zoneName == $(this).val());
         // console.log(cart.delivery);
         updateUI();
     });
-    /* End of populate delivery zones */
+    
 
     /* add to cart action */
     const addToCartBtn = $('#addToCartBtn');
@@ -278,7 +280,7 @@ $(document).ready(function () {
     });
 
     $('.checkoutBtn').click(function(){
-        alert('We have received your order');
+        alert('Your order will be ready in 20 minutes. Thank You!!!');
         cart = new Cart();
         updateUI();
     });
